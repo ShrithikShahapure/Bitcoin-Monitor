@@ -110,10 +110,10 @@ sudo chmod 666 /var/run/docker.sock
 sudo apt install make
 
 echo 'Clone git repo to EC2'
-cd /home/ubuntu && git clone https://github.com/josephmachado/bitcoinMonitor.git
+cd /home/ubuntu && git clone https://github.com/ShrithikShahapure/Bitcoin-Monitor.git
 
-echo 'CD to bitcoinMonitor directory'
-cd bitcoinMonitor
+echo 'CD to Bitcoin-Monitor directory'
+cd Bitcoin-Monitor
 
 echo 'Start containers'
 make up
@@ -140,6 +140,11 @@ resource "aws_budgets_budget" "ec2" {
   notification {
     comparison_operator        = "GREATER_THAN"
     threshold                  = 100
+    threshold_type             = "PERCENTAGE"
+    notification_type          = "FORECASTED"
+    subscriber_email_addresses = [var.alert_email_id]
+  }
+}
     threshold_type             = "PERCENTAGE"
     notification_type          = "FORECASTED"
     subscriber_email_addresses = [var.alert_email_id]
