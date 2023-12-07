@@ -6,6 +6,9 @@ This Project aims to create a simple dashboard that is populated by near real-ti
 ## Archiecture
 ![Architectture](image.png)
 
+## Demo
+![Architectture](demo.png)
+
 ## Setup
 
 ### Clone the code as shown below.
